@@ -7,7 +7,7 @@ const plans = [
   {
     name: "الأساسية",
     originalPrice: null,
-    price: "$7",
+    price: "15 دت",
     period: "سنة واحدة",
     description: "للمحبين البادئين",
     icon: Heart,
@@ -22,8 +22,8 @@ const plans = [
   },
   {
     name: "المتميزة",
-    originalPrice: "$14",
-    price: "$9", 
+    originalPrice: "30 دت",
+    price: "20 دت", 
     period: "مدى الحياة",
     description: "الأكثر اختياراً",
     icon: Zap,
@@ -113,7 +113,7 @@ const Pricing = () => {
                   
                   {plan.originalPrice && (
                     <Badge variant="secondary" className="mt-2 text-secondary-foreground font-semibold">
-                      وفر ${parseInt(plan.originalPrice.slice(1)) - parseInt(plan.price.slice(1))}
+                      وفر 10 دت
                     </Badge>
                   )}
                 </div>
@@ -151,10 +151,10 @@ const Pricing = () => {
         {/* Additional Info */}
         <div className="text-center mt-12 space-y-4">
           <p className="text-muted-foreground">
-            💳 دفع آمن 100% | 🔄 ضمان الاسترداد خلال 30 يوم
+            📱 دفع عبر D17: 23456789 | 🔄 ضمان الاسترداد خلال 30 يوم
           </p>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-            جميع المدفوعات مؤمنة ومشفرة. يمكنك طلب استرداد المبلغ خلال 30 يوماً إذا لم تكن راضياً عن الخدمة.
+            أرسل المبلغ عبر تطبيق D17 إلى الرقم 23456789 مع ذكر اسمك في الرسالة. جميع المدفوعات آمنة ويمكنك طلب استرداد المبلغ خلال 30 يوماً.
           </p>
         </div>
       </div>
