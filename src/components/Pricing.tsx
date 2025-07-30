@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, Heart, Zap } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const plans = [
   {
@@ -41,6 +42,16 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const { toast } = useToast();
+
+  const handleOrderClick = (planName: string, price: string) => {
+    toast({
+      title: "🎉 طلبك جاري التحضير!",
+      description: `لطلب الباقة ${planName} (${price}), أرسل رسالة عبر D17 إلى 23456789 واذكر: "أريد باقة ${planName} - الاسم: [اسمك]"`,
+      duration: 8000,
+    });
+  };
+
   return (
     <section id="pricing" className="py-20 relative">
       {/* Background decoration */}
@@ -137,6 +148,7 @@ const Pricing = () => {
                   variant={plan.popular ? "romantic" : "outline"} 
                   size="lg" 
                   className="w-full text-lg font-semibold"
+                  onClick={() => handleOrderClick(plan.name, plan.price)}
                 >
                   اصنع موقعي الآن
                 </Button>
